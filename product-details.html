@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Product Details | Indian Agricultural Products</title>
+<meta name="description" content="View detailed agricultural product information including seeds, fertilizers, and crop solutions for Indian farmers and wholesalers.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   MODERN DESIGN SYSTEM
+========================= */
+
+:root {
+  --primary: #2e7d32;
+  --primary-dark: #1b5e20;
+  --accent: #ff9800;
+  --bg: #f4f7f2;
+  --card-bg: #ffffff;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --radius: 16px;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.06);
+  --shadow-hover: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);;
+  color: #1b5e20;
+  line-height: 1.6;
+  animation: fadeBody 0.6s ease forwards;
+  opacity: 0;
+}
+
+
+
+
+
+
+@keyframes fadeBody {
+  to { opacity: 1};   /* ❌ yaha semicolon galat jagah hai */
+}
+
+
+/* Container */
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+/* Header */
+.product-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.product-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  letter-spacing: 0.5px;
+}
+
+/* Layout */
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gallery */
+.product-gallery img,
+.product-gallery video {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s ease;
+}
+
+.product-gallery img:hover,
+.product-gallery video:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Product Info Card */
+.product-info {
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: 0.3s ease;
+}
+
+.product-info:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Headings */
+.product-info h2 {
+  color: var(--primary);
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.product-info p {
+  color: var(--text-light);
+  margin-bottom: 25px;
+}
+
+/* Feature List */
+.product-info ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.product-info ul li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: var(--text-dark);
+}
+
+.product-info ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Price */
+#product-price {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button,
+.back-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Enquiry Button */
+#enquiry-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+#enquiry-btn:hover {
+  background: #f57c00;
+  transform: translateY(-2px);
+}
+
+/* Back Button */
+.back-btn {
+  background: var(--primary);
+  color: #fff;
+  margin-top: 20px;
+}
+
+.back-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Smooth Fade Animation */
+.product-info,
+.product-gallery img,
+.product-gallery video {
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+};
+
+
+
+@keyframes fadeBody {
+  to { opacity: 1; }
+}
+
+/* Container */
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+/* Header */
+.product-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.product-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  letter-spacing: 0.5px;
+}
+
+/* Layout */
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gallery */
+.product-gallery img,
+.product-gallery video {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s ease;
+}
+
+.product-gallery img:hover,
+.product-gallery video:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Product Info Card */
+.product-info {
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: 0.3s ease;
+}
+
+.product-info:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Headings */
+.product-info h2 {
+  color: var(--primary);
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.product-info p {
+  color: var(--text-light);
+  margin-bottom: 25px;
+}
+
+/* Feature List */
+.product-info ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.product-info ul li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: var(--text-dark);
+}
+
+.product-info ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Price */
+#product-price {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button,
+.back-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Enquiry Button */
+#enquiry-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+#enquiry-btn:hover {
+  background: #f57c00;
+  transform: translateY(-2px);
+}
+
+/* Back Button */
+.back-btn {
+  background: var(--primary);
+  color: #fff;
+  margin-top: 20px;
+}
+
+.back-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Smooth Fade Animation */
+.product-info,
+.product-gallery img,
+.product-gallery video {
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+;
+
+
+@keyframes fadeBody {
+  to { opacity: 1; }
+}
+
+/* Container */
+.container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+/* Header */
+.product-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.product-header h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  letter-spacing: 0.5px;
+}
+
+/* Layout */
+.product-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .product-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Gallery */
+.product-gallery img,
+.product-gallery video {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s ease;
+}
+
+.product-gallery img:hover,
+.product-gallery video:hover {
+  transform: scale(1.03);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Product Info Card */
+.product-info {
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: 0.3s ease;
+}
+
+.product-info:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* Headings */
+.product-info h2 {
+  color: var(--primary);
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.product-info p {
+  color: var(--text-light);
+  margin-bottom: 25px;
+}
+
+/* Feature List */
+.product-info ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.product-info ul li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+  color: var(--text-dark);
+}
+
+.product-info ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+/* Price */
+#product-price {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+button,
+.back-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+/* Enquiry Button */
+#enquiry-btn {
+  background: var(--accent);
+  color: #fff;
+}
+
+#enquiry-btn:hover {
+  background: #f57c00;
+  transform: translateY(-2px);
+}
+
+/* Back Button */
+.back-btn {
+  background: var(--primary);
+  color: #fff;
+  margin-top: 20px;
+}
+
+.back-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Smooth Fade Animation */
+.product-info,
+.product-gallery img,
+.product-gallery video {
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="product-header">
+    <h1 id="product-title">Product Name</h1>
+  </div>
+
+  <div class="product-layout">
+
+  <div class="product-gallery" id="product-gallery"></div>
+
+  <div class="product-info">
+
+    <h2>Product Description</h2>
+    <p id="product-description"></p>
+
+    <h2>Key Features</h2>
+    <ul id="product-features"></ul>
+
+    <h3 id="product-price" style="color:#1b5e20;font-size:22px;margin:15px 0;"></h3>
+
+<button id="enquiry-btn" 
+style="padding:12px 25px;background:#ff9800;color:white;border:none;border-radius:8px;cursor:pointer;margin-right:10px;">
+Enquire Now
+</button>
+
+
+    <a href="index.html#products" class="back-btn">← Back to Products</a>
+  </div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+const product = params.get("product");
+
+const productData = {
+
+  wheat: {
+    title: "Premium Wheat Seeds",
+    price: "₹2,500 per quintal",
+
+    description: "High-yield wheat seeds suitable for Indian soil conditions. Ideal for large-scale farming and wholesale supply.",
+    features: [
+      "High germination rate",
+      "Disease resistant",
+      "Suitable for North & Central India",
+      "Increased crop yield"
+    ],
+    gallery: [
+      '<img src="images/wheat1.jpg" alt="Wheat Seed Image 1">',
+      '<img src="images/wheat2.jpg" alt="Wheat Farming India">',
+      '<video controls src="videos/wheat-overview.mp4"></video>'
+    ]
+  },
+
+  rice: {
+    title: "Organic Rice Seeds",
+    price: "₹2,500 per quintal",
+
+    description: "Premium organic rice seeds designed for maximum productivity and export-quality crops.",
+    features: [
+      "Export quality",
+      "High resistance to pests",
+      "Suitable for Indian climate",
+      "Better grain quality"
+    ],
+    gallery: [
+      '<img src="images/rice1.jpg" alt="Rice Seed Image">',
+      '<video controls src="videos/rice-overview.mp4"></video>'
+    ]
+  },
+
+  pesticide: {
+    title: "Advanced Pesticides",
+    price: "₹2,500 per quintal",
+
+    description: "High quality crop protection pesticides for Indian farms.",
+    features: [
+      "Fast acting formula",
+      "Safe for crops",
+      "Government approved",
+      "Improves yield quality"
+    ],
+    gallery: [
+      '<img src="images/pesticide1.jpg" alt="Pesticide Image">',
+      '<video controls src="videos/pesticide.mp4"></video>'
+    ]
+  }
+
+};
+
+if(productData[product]) {
+
+  document.getElementById("product-price").innerText = 
+"Price: " + productData[product].price;
+
+document.getElementById("enquiry-btn").onclick = function() {
+  const message = "Hello, I am interested in " + productData[product].title;
+  window.open("https://wa.me/918446021650?text=" + encodeURIComponent(message));
+};
+
+
+  document.getElementById("product-title").innerText = productData[product].title;
+  document.getElementById("product-description").innerText = productData[product].description;
+
+  const featuresList = document.getElementById("product-features");
+  featuresList.innerHTML = "";
+
+  productData[product].features.forEach(feature => {
+    const li = document.createElement("li");
+    li.innerText = feature;
+    featuresList.appendChild(li);
+  });
+
+  document.getElementById("product-gallery").innerHTML =
+    productData[product].gallery.join("");
+
+} else {
+  document.querySelector(".container").innerHTML =
+    "<h2 style='text-align:center;color:red;'>Product Not Found</h2>";
+}
+
+</script>
+
+</body>
+</html>
